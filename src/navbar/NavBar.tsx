@@ -16,7 +16,7 @@ function NavBar() {
                         <div className="flex gap-x-4 flex-row  h-24 items-center">
                             <div className="w-[15%] justify-center items-center flex flex-col ml-4 lg:ml-0">
                                 <Link href='/'>
-                                  <span className=" text-logoColor font-bold">BookUsNow</span>
+                                  <span className=" ml-8 md:ml-6 lg:ml-2 text-logoColor font-bold">BookUsNow</span>
                                 </Link>
                                 <div className="mt-4 flex flex-row items-center">
                                 <Link href='/'>
