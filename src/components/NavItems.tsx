@@ -13,9 +13,9 @@ export default function NavItems() {
             <Input className="w-full" type="text" placeholder="DJI phantom"/>
         </div>
         <div className="mb-0 flex flex-row font-bold m-2 text-sm justify-center gap-x-4">
-            {["Live Shows", "Streams", "Movies", "Plays", "Events", "Sports", "Activities"].map(component => {
+            {["Live Shows", "Streams", "Movies", "Plays", "Events", "Sports", "Activities"].map((component,index) => {
                 return(
-                    <div className="flex flex-row text-fontColorSubtitle hover:cursor-pointer ml-2 mr-2">
+                    <div key={index} className="flex flex-row text-fontColorSubtitle hover:cursor-pointer ml-2 mr-2">
                         <span>{component}</span>
                     </div>
                 )

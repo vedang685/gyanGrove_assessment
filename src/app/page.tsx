@@ -1,19 +1,27 @@
-import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import { CarouselSize } from '@/components/RecommendedCard';
 import UpcomingEvents from '@/components/UpcomingCards';
+import Image from 'next/image';
 import React from 'react';
 
 function Page() {
   return (
     <>
-      <div className="relative">
-          <img src="/Front screen.svg" className="w-full" alt="Your Image" />
+      <div className="relative w-full h-[80vh]">
+        <div className="">
+          <Image 
+            src="/Front_screen.svg" 
+            fill 
+            priority
+            alt="Your Image" 
+            style={{objectFit: 'cover'}}
+          />
+        </div>
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 flex items-center justify-center">
           </div>
-          <div className='absolute top-[30%] w-full flex flex-col items-center justify-center'>
-            <p className=" text-white text-sm md:text-3xl lg:text-5xl font-bold text-center">Discover Exciting Events Happening</p>
-            <p className=" text-white text-sm md:text-3xl lg:text-5xl font-bold text-center"> Near You - Stay Tuned for Updates!</p>
-            <p className="w-[80%] mt-4 text-white text-[10px] lg:text-xl md:text-lg text-center"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit facere at ullam dolorem, quaerat blanditiis repellendus officiis dignissimos sed, nostrum adipisci, consequatur error perferendis molestias dolore? Odit vel inventore quis.</p>
+          <div className='absolute top-[40%] w-full flex flex-col items-center justify-center'>
+            <p className=" text-white text-3xl md:text-3xl lg:text-5xl font-bold text-center">Discover Exciting Events Happening</p>
+            <p className=" text-white text-3xl md:text-3xl lg:text-5xl font-bold text-center"> Near You - Stay Tuned for Updates!</p>
+            <p className="w-[80%] mt-4 text-white text-lg lg:text-xl md:text-lg text-center"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit facere at ullam dolorem, quaerat blanditiis repellendus officiis dignissimos sed, nostrum adipisci, consequatur error perferendis molestias dolore? Odit vel inventore quis.</p>
           </div>
       </div>
       <div className='h-20 md:h-28 lg:h-28 relative w-full'>
