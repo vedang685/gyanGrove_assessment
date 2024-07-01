@@ -16,13 +16,13 @@ function NavBar() {
                         <div className="flex gap-x-4 flex-row h-24 items-center">
                             <div className="w-[30%] lg:w-[15%] xl:w-[15%] justify-center items-center flex flex-col ml-4 lg:ml-0">
                                 <Link href='/'>
-                                  <span className=" ml-8 md:ml-6 lg:ml-2 text-logoColor font-bold">BookUsNow</span>
+                                  <span className=" ml-6 md:ml-6 lg:ml-2 text-logoColor font-bold">BookUsNow</span>
                                 </Link>
-                                <div className="mt-4 flex flex-row items-center">
-                                <Link href='/'>
-                                  <Icons.logo color= "#989090" className="h-4 w-4"/>
-                                </Link>
-                                <span className="text-[11px] ml-1 text-strokeColor font-bold">Mumbai, India</span>
+                                <div className="mt-2 lg:mt-4 xl:mt-4 flex flex-row items-center">
+                                    <Link href='/'>
+                                    <Icons.logo color= "#989090" className="h-4 w-4"/>
+                                    </Link>
+                                    <span className="text-[11px] ml-1 text-strokeColor font-bold">Mumbai, India</span>
                                 </div>
                             </div>
                             <div className="w-[80%] flex items-center gap-x-4  justify-end lg:hidden xl:hidden">
