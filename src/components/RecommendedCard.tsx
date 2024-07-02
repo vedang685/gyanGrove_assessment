@@ -13,6 +13,7 @@ import {
 import manipulatedEvents from './../utils/recommendFetch';
 import Image from "next/image";
 import { Icons } from "./Icons";
+import { convertGoogleDriveLink } from "@/utils/directImageLink";
 
 interface Event {
   eventName: string;
@@ -55,21 +56,33 @@ export function CarouselSize() {
           <CarouselItem key={`event-${index}`} className="md:basis-1/2 lg:basis-1/3">
             <div className="p-1">
               <Card>
-                <CardContent className="flex relative aspect-square p-6">
+                <CardContent className="relative h-[400px]">
                   {isMounted && fetchedEvents[`${index+1}`] && (
-                    <div className="absolute bottom-1 flex flex-col gap-y-2 flex-wrap">
-                      <div className="flex flex-col gap-y-1 font-bold">
-                        <span className="text-sm text-strokeColor">{fetchedEvents[`${index+1}`].eventName}</span>
-                        <span className="text-sm text-strokeColor gap-x-2 flex flex-row items-center">
-                          <Icons.logo color="#989090" className="h-1 w-2"/>
-                          {fetchedEvents[`${index+1}`].cityName}
-                        </span>
+                    <>
+                      <div className="absolute inset-0">
+                        <Image 
+                          src={convertGoogleDriveLink(fetchedEvents[`${index+1}`].imgUrl)} 
+                          alt="" 
+                          fill
+                          className="object-cover transform scale-125 transition-transform duration-500" 
+                        />
                       </div>
-                      <div className="flex flex-col justify-center">
-                        <span className="text-sm text-strokeColor">{fetchedEvents[`${index+1}`].date}</span>
-                        <span className="text-sm text-strokeColor">{fetchedEvents[`${index+1}`].weather}</span>
+                      <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white">
+                        <div className="flex flex-col gap-y-2">
+                          <div className="font-bold">
+                            <span className="text-sm">{fetchedEvents[`${index+1}`].eventName}</span>
+                            <span className="text-sm gap-x-2 flex flex-row items-center">
+                              <Icons.logo color="#FFFFFF" className="h-4 w-4"/>
+                              {fetchedEvents[`${index+1}`].cityName}
+                            </span>
+                          </div>
+                          <div className="flex flex-col">
+                            <span className="text-sm">{fetchedEvents[`${index+1}`].date}</span>
+                            <span className="text-sm">{fetchedEvents[`${index+1}`].weather}</span>
+                          </div>
+                        </div>
                       </div>
-                    </div>
+                    </>
                   )}
                 </CardContent>
               </Card>

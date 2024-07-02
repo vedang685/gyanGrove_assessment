@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import { Icons } from './Icons';
+import { convertGoogleDriveLink } from '@/utils/directImageLink';
 
 interface Event {
   eventName: string;
@@ -77,8 +78,8 @@ const UpcomingEvents: React.FC = () => {
             ref={index === events.length - 1 ? lastEventElementRef : null}
             className="bg-white shadow-md rounded-lg overflow-hidden"
           >
-            <div className="relative rounded-md border border-strokeColor-100 h-48">
-              
+            <div className="relative rounded-md h-48">
+              <Image src={convertGoogleDriveLink(event.imgUrl)} fill alt=''/>
             </div>
             <div className="p-4">
               <h2 className="text-lg font-semibold mb-2 truncate">{event.eventName}</h2>
