@@ -53,7 +53,7 @@ export function CarouselSize() {
     >
       <CarouselContent>
         {Array.from({ length: 8 }).map((_, index) => (
-          <CarouselItem key={`event-${index}`} className="md:basis-1/2 lg:basis-1/3 overflow-hidden rounded-lg">
+          <CarouselItem key={`event-${index}`} className="md:basis-1/2 lg:basis-1/3 overflow-hidden rounded-lg md:m-2 lg:m-2">
             <div className="">
               <Card>
                 <CardContent className="relative h-[400px]">
