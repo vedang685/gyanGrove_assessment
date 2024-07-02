@@ -49,12 +49,12 @@ export function CarouselSize() {
       opts={{
         align: "start",
       }}
-      className="w-full max-w-[70%] sm:max-w-[80%] md:max-w-[90%] mx-auto"
+      className="w-full max-w-[60%] sm:max-w-[80%] md:max-w-[90%] mx-auto"
     >
       <CarouselContent>
         {Array.from({ length: 8 }).map((_, index) => (
-          <CarouselItem key={`event-${index}`} className="md:basis-1/2 lg:basis-1/3">
-            <div className="p-1">
+          <CarouselItem key={`event-${index}`} className="md:basis-1/2 lg:basis-1/3 overflow-hidden rounded-lg">
+            <div className="">
               <Card>
                 <CardContent className="relative h-[400px]">
                   {isMounted && fetchedEvents[`${index+1}`] && (
@@ -64,7 +64,7 @@ export function CarouselSize() {
                           src={convertGoogleDriveLink(fetchedEvents[`${index+1}`].imgUrl)} 
                           alt="" 
                           fill
-                          className="object-cover transform scale-125 transition-transform duration-500" 
+                          className="transform scale-125 transition-transform duration-500" 
                         />
                       </div>
                       <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white">
